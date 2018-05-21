@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index');
+Route::get('/products', 'ProductsController@index');
+Route::get('/invoice', 'InvoiceController@index');
+Route::get('/delivery', 'DeliveryController@index');
+Route::get('/customers', 'CustomersController@index');
+Route::get('/settings', 'SettingsController@index');
